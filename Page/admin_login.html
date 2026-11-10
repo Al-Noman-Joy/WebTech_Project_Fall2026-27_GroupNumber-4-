@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <title>Admin Login</title>
+        <link rel="stylesheet" href="../Design/admin.css">
+        <script src="../JS/admin.js"></script>
+    </head>
+    <body>
+        <img src="../Images/foodloop-logo.png" id="logo" alt="FoodLoop Logo">
+
+        <div class="header">
+            <h1>FoodLoop</h1>
+        </div>
+
+        <form onsubmit="return login_data()">
+            <fieldset>
+                <legend>Admin Login</legend>
+                <table>
+                    <tr>
+                        <td><label for="UserName">User Name:</label></td>
+                        <td><input type="text" id="UserName" placeholder="Enter User Name"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="Password">Password:</label></td>
+                        <td><input type="password" id="Password" placeholder="Enter Password"></td>
+                    </tr>
+                </table>
+                <p id="LoginError"></p>
+            </fieldset>
+
+            <input type="submit" id="submit" value="Login">
+            <input type="reset" id="reset">
+        </form>
+
+        <div class="footer">FoodLoop</div>
+    </body>
+</html>

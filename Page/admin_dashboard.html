@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <title>Admin Dashboard</title>
+        <link rel="stylesheet" href="../Design/admin.css">
+        <script src="../JS/admin.js"></script>
+    </head>
+
+    <body onload="show_dashboard()">
+
+        <img src="../Images/foodloop-logo.png" id="logo" alt="FoodLoop Logo">
+
+        <div class="header">
+            <h1>FoodLoop</h1>
+            <h3>Admin Panel</h3>
+        </div>
+
+        <div class="topnav">
+            <a href="admin_dashboard.html">Dashboard</a>
+            <a href="#">Manage Users</a>
+            <a href="#">Manage Donations</a>
+            <a href="#">Reports</a>
+            <a href="#">Settings</a>
+        </div>
+
+        <h2 id="WelcomeText"></h2>
+
+        <fieldset>
+            <legend>System Summary</legend>
+
+            <table>
+                <tr>
+                    <td>Total Users:</td>
+                    <td id="TotalUsers"></td>
+                </tr>
+
+                <tr>
+                    <td>Pending Requests:</td>
+                    <td id="PendingUsers"></td>
+                </tr>
+
+                <tr>
+                    <td>Approved Users:</td>
+                    <td id="ApprovedUsers"></td>
+                </tr>
+            </table>
+        </fieldset>
+
+        <fieldset>
+            <legend>Registration Requests</legend>
+
+            <table border="1" id="UserTable"></table>
+        </fieldset>
+
+        <div class="logout-container">
+            <a href="#" class="logout" onclick="return logout()">Logout</a>
+        </div>
+
+        <div class="footer">
+            FoodLoop
+        </div>
+
+    </body>
+</html>

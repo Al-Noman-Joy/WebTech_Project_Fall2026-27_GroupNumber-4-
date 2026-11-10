@@ -1,0 +1,224 @@
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 16px;
+    color: #222222;
+    background-color: #f4f4f8;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 30px 20px;
+}
+
+
+/* Text and Links */
+
+a{
+    color: #3d405b;
+    font-weight: bold;
+}
+
+h2{
+    color: #2b2d42;
+}
+
+p{
+    color: #c0392b;
+    text-align: center;
+}
+
+
+/* Logo */
+
+#logo{
+    display: block;
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 10px 10px;
+    object-fit: contain;
+}
+
+/* Header */
+
+.header{
+    text-align: center;
+    color: white;
+    padding: 12px;
+    margin: 10px;
+    background-color: #3d405b;
+    border-radius: 8px;
+}
+
+
+/* Navigation Bar */
+
+.topnav{
+    overflow: hidden;
+    background-color: #2b2d42;
+    padding: 12px;
+    margin: 10px;
+    border-radius: 8px;
+}
+
+.topnav a{
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-weight: normal;
+    border-radius: 5px;
+}
+
+.topnav a:hover{
+    background-color: #3d405b;
+}
+
+
+/* Logout */
+
+.logout-container{
+    text-align: right;
+    margin: 20px 10px;
+}
+
+.logout-container a.logout{
+    display: inline-block;
+    color: white;
+    background-color: #2b2d42;
+    border: 1px solid #3d405b;
+    border-radius: 6px;
+    padding: 10px 25px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.logout-container a.logout:hover{
+    background-color: #3d405b;
+}
+
+
+/* Footer */
+
+.footer{
+    background-color: #2b2d42;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    border-radius: 8px;
+    margin-top: 35px;
+}
+
+
+/* Fieldset and Legend */
+
+fieldset{
+    background-color: #eeeef4;
+    border: 1px solid #c5c6d6;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+legend{
+    background-color: #3d405b;
+    color: white;
+    border: 1px solid #2b2d42;
+    border-radius: 8px;
+    padding: 6px 14px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+}
+
+
+/* Table */
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+td{
+    padding: 8px 6px;
+    vertical-align: top;
+}
+
+th{
+    background-color: #3d405b;
+    color: white;
+    padding: 8px 6px;
+}
+
+table[border="1"] th,
+table[border="1"] td{
+    border-color: #c5c6d6;
+}
+
+
+/* Input Fields */
+
+input[type="text"],
+input[type="number"],
+input[type="password"],
+input[type="email"],
+select,
+textarea{
+    width: 100%;
+    padding: 8px 10px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 16px;
+    border: 1px solid #3d405b;
+    border-radius: 5px;
+    background-color: white;
+}
+
+textarea{
+    height: 110px;
+}
+
+
+/* Radio Buttons and Checkboxes */
+
+input[type="radio"],
+input[type="checkbox"]{
+    margin: 10px 4px 0 10px;
+    accent-color: #3d405b;
+}
+
+
+/* Submit, Reset and Button */
+
+input[type="submit"],
+input[type="reset"],
+input[type="button"]{
+    padding: 10px 20px;
+    font-size: 16px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 8px;
+    width: 48%;
+    color: white;
+    background-color: #3d405b;
+}
+
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+input[type="button"]:hover{
+    background-color: #2b2d42;
+}
+
+
+/* Table Button */
+
+td input[type="button"]{
+    width: auto;
+    margin: 2px;
+    padding: 6px 12px;
+}
