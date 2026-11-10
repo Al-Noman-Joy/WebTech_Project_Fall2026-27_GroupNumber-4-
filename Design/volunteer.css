@@ -1,0 +1,127 @@
+
+* {
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 16px;
+    color: #222222;
+    background-color: #f2f7fa;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 30px 20px;
+}
+
+/* Paragraph */
+p {
+    color: #c0392b;
+    text-align: center;
+}
+
+/* Header */
+.header {
+    text-align: center;
+    color: white;
+    padding: 12px;
+    margin: 10px;
+    background-color: #2a6f97;
+    border-radius: 8px;
+}
+
+/* Footer */
+.footer {
+    background-color: #014f86;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 30px;
+    border-radius: 8px;
+    clear: both;
+}
+
+/* Fieldset */
+fieldset {
+    background-color: #e8f1f7;
+    border: 1px solid #b5cfe0;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+/* Legend */
+legend {
+    background-color: #2a6f97;
+    color: white;
+    border: 1px solid #014f86;
+    border-radius: 8px;
+    padding: 6px 14px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+}
+
+/* Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* Table Data */
+td {
+    padding: 8px 6px;
+    vertical-align: top;
+}
+
+/* Input Fields */
+input[type="text"],
+input[type="password"],
+input[type="email"],
+select,
+textarea {
+    width: 100%;
+    padding: 8px 10px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 16px;
+    border: 1px solid #2a6f97;
+    border-radius: 5px;
+    background-color: white;
+}
+
+/* Textarea */
+textarea {
+    height: 110px;
+}
+
+/* Radio and Checkbox */
+input[type="radio"],
+input[type="checkbox"] {
+    margin: 10px 4px 0 10px;
+    accent-color: #2a6f97;
+}
+
+/* Buttons */
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 8px;
+    margin-bottom: 20px;
+    width: 48%;
+    color: white;
+    background-color: #2a6f97;
+}
+
+/* Button Hover */
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+input[type="button"]:hover {
+    background-color: #014f86;
+}
+

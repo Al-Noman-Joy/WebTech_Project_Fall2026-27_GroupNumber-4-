@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <title> Volunteer Login </title>
+        <link rel="stylesheet" href="../Design/volunteer.css">
+        <script src="../JS/volunteer.js"></script>
+    </head>
+    <body>
+        <div class="header"> <h1> FoodLoop </h1> </div>
+        <form onsubmit="return login_data()">
+            <fieldset>
+                <legend> Volunteer Login </legend>
+                <table>
+                    <tr>
+                        <td> <label for="UserName"> User Name: </label> </td>
+                        <td> <input type="text" id="UserName" placeholder="Enter User Name"> </td>
+                    </tr>
+                    <tr>
+                        <td> <label for="Password"> Password: </label> </td>
+                        <td> <input type="password" id="Password" placeholder="Enter Password"> </td>
+                    </tr>
+                </table>
+                <p id="LoginError"></p>
+            </fieldset>
+            <input type="submit" id="submit" value="Login">
+            <input type="button" id="register" value="Register" onclick="window.location.href = 'volunteer_register.html'">
+        </form>
+        <div class="footer"> FoodLoop</div>
+    </body>
+</html>
