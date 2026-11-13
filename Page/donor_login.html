@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title> Donor Login </title>
+        <link rel="stylesheet" href="../Design/donor.css">
+        <script src="../JS/donor.js"></script>
+    </head>
+    <body>
+        <div class="header"> <h1> FoodLoop </h1> </div>
+        <form class="donor-login-form" onsubmit="return login_data()">
+            <fieldset>
+                <legend> Donor Login </legend>
+                <table>
+                    <tr>
+                        <td> <label for="UserName"> User Name: </label> </td>
+                        <td> <input type="text" id="UserName" placeholder="Enter User Name"> </td>
+                    </tr>
+                    <tr>
+                        <td> <label for="Password"> Password: </label> </td>
+                        <td> <input type="password" id="Password" placeholder="Enter Password"> </td>
+                    </tr>
+                </table>
+                <p id="LoginError"></p>
+            </fieldset>
+            <input type="submit" id="submit" value="Login">
+            <input type="reset" id="reset">
+        </form>
+        <footer class="footer"><a href="index.html">FoodLoop</a></footer>
+    </body>
+</html>

@@ -1,0 +1,41 @@
+*{ box-sizing: border-box; }
+body{ font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-size: 16px; color: #222222; background-color: #f3f8f4; max-width: 720px; margin: 0 auto; padding: 30px 20px; }
+a{ color: #2d6a4f; font-weight: bold; }
+h2{ color: #1b4332; }
+p{ color: #c0392b; text-align: center; }
+.header{ text-align: center; color: white; padding: 12px; margin: 10px; background-color: #2d6a4f; border-radius: 8px; }
+.topnav{ overflow: hidden; background-color: #1b4332; padding: 12px; margin: 10px; border-radius: 8px; }
+.topnav a{ float: left; display: block; color: white; text-align: center; padding: 14px 16px; text-decoration: none; font-weight: normal; border-radius: 5px; }
+.topnav a:hover{ background-color: #2d6a4f; }
+.topnav a.logout{ float: right; }
+.footer{ background-color: #1b4332; color: white; text-align: center; padding: 10px; border-radius: 8px; }
+.footer > a{ display: block; color: inherit; font-weight: inherit; text-decoration: none; }
+.footer > a:hover{ text-decoration: underline; }
+fieldset{ background-color: #eaf4ec; border: 1px solid #b7d3bf; border-radius: 8px; padding: 20px; margin-bottom: 20px; }
+legend{ background-color: #2d6a4f; color: white; border: 1px solid #1b4332; border-radius: 8px; padding: 6px 14px; font-family: 'Times New Roman', Times, serif; font-weight: bold; }
+table{ width: 100%; border-collapse: collapse; }
+td{ padding: 8px 6px; vertical-align: top; }
+input[type="text"], input[type="number"], input[type="password"], input[type="email"], select, textarea{ width: 100%; padding: 8px 10px; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-size: 16px; border: 1px solid #2d6a4f; border-radius: 5px; background-color: white; }
+textarea{ height: 110px; }
+input[type="radio"], input[type="checkbox"]{ margin: 10px 4px 0 10px; accent-color: #2d6a4f; }
+input[type="submit"], input[type="reset"], input[type="button"]{ padding: 10px 20px; font-size: 16px; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-weight: bold; border: none; border-radius: 5px; cursor: pointer; margin-left: 8px; width: 48%; color: white; background-color: #2d6a4f; }
+input[type="submit"]:hover, input[type="reset"]:hover, input[type="button"]:hover{ background-color: #1b4332; }
+
+.donor-login-form {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.donor-login-form > fieldset {
+    grid-column: 1 / -1;
+    min-width: 0;
+    margin: 0;
+}
+
+.donor-login-form > input[type="submit"],
+.donor-login-form > input[type="reset"] {
+    width: 100%;
+    margin: 0;
+}
