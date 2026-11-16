@@ -34,41 +34,6 @@ function check_session()
     return session;
 }
 
-// ---------- Default Receiver Account ----------
-function create_default_user()
-{
-    let users = get_users();
-    let found = false;
-    for(let i = 0; i < users.length; i++)
-    {
-        if(users[i].username === "sadia12")
-        {
-            users[i].role = "receiver";
-            users[i].password = "sadia123";
-            users[i].status = "Approved";
-            found = true;
-            break;
-        }
-    }
-    if(found === false)
-    {
-        users.push({
-            role: "receiver",
-            name: "Sadia",
-            email: "sadia@example.com",
-            gender: "Female",
-            area: "Dhaka",
-            address: "",
-            extra: "",
-            username: "sadia12",
-            password: "sadia123",
-            status: "Approved"
-        });
-    }
-    localStorage.setItem("foodloop_users", JSON.stringify(users));
-}
-
-create_default_user();
 let gender_value = "";
 let extra_value = "";
 
