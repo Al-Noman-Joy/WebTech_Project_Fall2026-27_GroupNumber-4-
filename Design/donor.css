@@ -12,8 +12,6 @@ body {
 
 a { color: #2d6a4f; font-weight: bold; }
 
-h2 { color: #1b4332; }
-
 p { color: #c0392b; text-align: center; }
 
 .header {
@@ -24,29 +22,6 @@ p { color: #c0392b; text-align: center; }
   background-color: #2d6a4f;
   border-radius: 8px;
 }
-
-.topnav {
-  overflow: hidden;
-  background-color: #1b4332;
-  padding: 12px;
-  margin: 10px;
-  border-radius: 8px;
-}
-
-.topnav a {
-  float: left;
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-weight: normal;
-  border-radius: 5px;
-}
-
-.topnav a:hover { background-color: #2d6a4f; }
-
-.topnav a.logout { float: right; }
 
 .footer {
   background-color: #1b4332;
@@ -87,7 +62,7 @@ table { width: 100%; border-collapse: collapse; }
 
 td { padding: 8px 6px; vertical-align: top; }
 
-input[type="text"], input[type="number"], input[type="password"], input[type="email"], select, textarea {
+input[type="text"], input[type="password"] {
   width: 100%;
   padding: 8px 10px;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
@@ -97,14 +72,7 @@ input[type="text"], input[type="number"], input[type="password"], input[type="em
   background-color: white;
 }
 
-textarea { height: 110px; }
-
-input[type="radio"], input[type="checkbox"] {
-  margin: 10px 4px 0 10px;
-  accent-color: #2d6a4f;
-}
-
-input[type="submit"], input[type="reset"], input[type="button"] {
+input[type="submit"], input[type="reset"] {
   padding: 10px 20px;
   font-size: 16px;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
@@ -118,7 +86,7 @@ input[type="submit"], input[type="reset"], input[type="button"] {
   background-color: #2d6a4f;
 }
 
-input[type="submit"]:hover, input[type="reset"]:hover, input[type="button"]:hover {
+input[type="submit"]:hover, input[type="reset"]:hover {
   background-color: #1b4332;
 }
 
@@ -140,5 +108,3 @@ input[type="submit"]:hover, input[type="reset"]:hover, input[type="button"]:hove
   width: 100%;
   margin: 0;
 }
-/* Rifat*/
- 
