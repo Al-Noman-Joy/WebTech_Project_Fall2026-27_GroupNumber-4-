@@ -68,7 +68,9 @@ p {
   text-align: center;
   padding: 10px;
   border-radius: 8px;
+  margin: 10px;
 }
+
 
 fieldset {
   background-color: #fbf0e6;
