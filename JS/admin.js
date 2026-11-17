@@ -121,7 +121,7 @@ function register_admin()
         return false;
     }
 
-    // Store Admin Information Without JSON
+    // Store Admin Information 
 
     let admin_data = name + "|" + email + "|" + username + "|" + password;
 
