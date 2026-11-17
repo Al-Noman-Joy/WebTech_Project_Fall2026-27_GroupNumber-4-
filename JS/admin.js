@@ -1,7 +1,7 @@
 
 console.log("Connected");
 
-// Admin Registration Function
+// ADMIN REGISTRATION FUNCTION
 
 function register_admin()
 {
@@ -13,6 +13,7 @@ function register_admin()
 
     let valid = true;
 
+    // Error Messages
 
     document.getElementById("NameError").innerHTML = "";
     document.getElementById("EmailError").innerHTML = "";
@@ -103,11 +104,7 @@ function register_admin()
 
     if(localStorage.getItem("foodloop_admin") !== null)
     {
-        document.getElementById("RegisterMessage").style.color = "red";
-
-        document.getElementById("RegisterMessage").innerHTML =
-        "An Admin account is already registered.";
-
+        alert("An Admin account is already registered.");
         return false;
     }
 
@@ -124,18 +121,15 @@ function register_admin()
         return false;
     }
 
-    // Admin Information 
+    // Store Admin Information Without JSON
 
     let admin_data = name + "|" + email + "|" + username + "|" + password;
 
     localStorage.setItem("foodloop_admin", admin_data);
 
-    // Success Message
+    // Registration Success Message
 
-    document.getElementById("RegisterMessage").style.color = "green";
-
-    document.getElementById("RegisterMessage").innerHTML =
-    "Admin Registration Successful! You can now login.";
+    alert("Admin Registration Successful! You can now login.");
 
     // Clear Form
 
@@ -144,6 +138,91 @@ function register_admin()
     document.getElementById("NewUserName").value = "";
     document.getElementById("NewPassword").value = "";
     document.getElementById("ConfirmPassword").value = "";
+
+    return false;
+}
+
+// ADMIN LOGIN FUNCTION
+
+
+function login_data()
+{
+    console.log("Login function is working");
+
+    let username = document.getElementById("UserName").value.trim();
+    let password = document.getElementById("Password").value;
+
+    // Clear Previous Messages
+
+    document.getElementById("LoginUsernameError").innerHTML = "";
+    document.getElementById("LoginPasswordError").innerHTML = "";
+    document.getElementById("LoginMessage").innerHTML = "";
+
+    let valid = true;
+
+    // Check Username
+
+    if(username === "")
+    {
+        document.getElementById("LoginUsernameError").innerHTML =
+        "Please enter your username.";
+
+        valid = false;
+    }
+
+    // Check Password
+
+    if(password === "")
+    {
+        document.getElementById("LoginPasswordError").innerHTML =
+        "Please enter your password.";
+
+        valid = false;
+    }
+
+    if(valid === false)
+    {
+        return false;
+    }
+
+    // Get Admin Information
+
+    let data = localStorage.getItem("foodloop_admin");
+
+    if(data === null)
+    {
+        alert("No Admin account found. Please register first.");
+        return false;
+    }
+
+    let admin = data.split("|");
+
+    // Check Login Information
+
+    if(username === admin[2] && password === admin[3] && admin.length === 4)
+    {
+        localStorage.setItem("foodloop_session", "admin|" + username);
+
+        alert("Login Successful! Welcome to FoodLoop Admin.");
+    }
+    else
+    {
+        alert("Invalid Username or Password. Please try again.");
+    }
+
+    return false;
+}
+
+
+// ADMIN LOGOUT FUNCTION
+
+function logout()
+{
+    localStorage.removeItem("foodloop_session");
+
+    alert("You have successfully logged out.");
+
+    window.location.href = "admin_login.html";
 
     return false;
 }
