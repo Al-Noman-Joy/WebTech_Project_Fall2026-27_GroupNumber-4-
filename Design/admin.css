@@ -1,38 +1,89 @@
 
-*{
-    box-sizing: border-box;
-}
+/* General Body */
 
-body{
+body {
+    margin: 0;
+    padding: 25px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 16px;
-    color: #222222;
     background-color: #f4f4f8;
+    color: #222222;
     max-width: 720px;
-    margin: 0 auto;
-    padding: 30px 20px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 
-/* Text and Links */
+/* Header */
 
-a{
-    color: #3d405b;
+.header {
+    background-color: #3d405b;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-bottom: 25px;
+    border-radius: 8px;
+}
+
+.header h1 {
+    margin: 5px;
+}
+
+.header h3 {
+    margin: 5px;
+}
+
+
+/* Fieldset */
+
+fieldset {
+    background-color: #eeeef4;
+    border: 1px solid #c5c6d6;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+legend {
+    background-color: #3d405b;
+    color: white;
+    padding: 7px 15px;
+    border-radius: 5px;
     font-weight: bold;
 }
 
-h2{
-    color: #2b2d42;
+
+/* Table */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
 }
 
-p{
-    color: #c0392b;
-    text-align: center;
+td {
+    padding: 10px 5px;
+    vertical-align: top;
+}
+
+td:first-child {
+    width: 35%;
 }
 
 
+/* Input Fields */
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 9px;
+    border: 1px solid #3d405b;
+    border-radius: 5px;
+    font-family: Cambria, Georgia, serif;
+    font-size: 15px;
+    box-sizing: border-box;
+}
 /* Logo */
-
 #logo{
     display: block;
     width: 120px;
@@ -41,184 +92,94 @@ p{
     object-fit: contain;
 }
 
-/* Header */
+/* Input Focus */
 
-.header{
-    text-align: center;
-    color: white;
-    padding: 12px;
-    margin: 10px;
+input:focus {
+    outline: 2px solid #a5a8c5;
+}
+
+
+/* Error Messages */
+
+.error {
+    color: red;
+    font-size: 14px;
+    margin: 5px 0 0 0;
+    padding: 0;
+}
+
+
+/* Submit and Reset Buttons */
+
+input[type="submit"],
+input[type="reset"] {
     background-color: #3d405b;
-    border-radius: 8px;
-}
-
-
-/* Navigation Bar */
-
-.topnav{
-    overflow: hidden;
-    background-color: #2b2d42;
-    padding: 12px;
-    margin: 10px;
-    border-radius: 8px;
-}
-
-.topnav a{
-    float: left;
-    display: block;
     color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-weight: normal;
+    border: none;
+    padding: 10px 22px;
+    margin: 10px 5px;
     border-radius: 5px;
+    font-family: Cambria, Georgia, serif;
+    font-size: 16px;
+    cursor: pointer;
 }
 
-.topnav a:hover{
-    background-color: #3d405b;
-}
 
+/* Button Hover */
 
-/* Logout */
-
-.logout-container{
-    text-align: right;
-    margin: 20px 10px;
-}
-
-.logout-container a.logout{
-    display: inline-block;
-    color: white;
+input[type="submit"]:hover,
+input[type="reset"]:hover {
     background-color: #2b2d42;
-    border: 1px solid #3d405b;
-    border-radius: 6px;
-    padding: 10px 25px;
-    text-decoration: none;
-    font-weight: bold;
 }
 
-.logout-container a.logout:hover{
-    background-color: #3d405b;
+
+/* Registration Success Message */
+
+#RegisterMessage {
+    text-align: center;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+
+/* Login Success and Error Message */
+
+#LoginMessage {
+    text-align: center;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+
+/* Page Links */
+
+.page-link {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.page-link a {
+    color: #3d405b;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.page-link a:hover {
+    text-decoration: underline;
 }
 
 
 /* Footer */
 
-.footer{
+.footer {
     background-color: #2b2d42;
     color: white;
     text-align: center;
-    padding: 10px;
-    border-radius: 8px;
-    margin-top: 35px;
-}
-
-
-/* Fieldset and Legend */
-
-fieldset{
-    background-color: #eeeef4;
-    border: 1px solid #c5c6d6;
-    border-radius: 8px;
-    padding: 20px;
-    margin-bottom: 20px;
-}
-
-legend{
-    background-color: #3d405b;
-    color: white;
-    border: 1px solid #2b2d42;
-    border-radius: 8px;
-    padding: 6px 14px;
-    font-family: 'Times New Roman', Times, serif;
-    font-weight: bold;
-}
-
-
-/* Table */
-
-table{
-    width: 100%;
-    border-collapse: collapse;
-}
-
-td{
-    padding: 8px 6px;
-    vertical-align: top;
-}
-
-th{
-    background-color: #3d405b;
-    color: white;
-    padding: 8px 6px;
-}
-
-table[border="1"] th,
-table[border="1"] td{
-    border-color: #c5c6d6;
-}
-
-
-/* Input Fields */
-
-input[type="text"],
-input[type="number"],
-input[type="password"],
-input[type="email"],
-select,
-textarea{
-    width: 100%;
-    padding: 8px 10px;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: 16px;
-    border: 1px solid #3d405b;
+    padding: 8px;
+    margin-top: 30px;
     border-radius: 5px;
-    background-color: white;
 }
 
-textarea{
-    height: 110px;
-}
-
-
-/* Radio Buttons and Checkboxes */
-
-input[type="radio"],
-input[type="checkbox"]{
-    margin: 10px 4px 0 10px;
-    accent-color: #3d405b;
-}
-
-
-/* Submit, Reset and Button */
-
-input[type="submit"],
-input[type="reset"],
-input[type="button"]{
-    padding: 10px 20px;
-    font-size: 16px;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-weight: bold;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-left: 8px;
-    width: 48%;
-    color: white;
-    background-color: #3d405b;
-}
-
-input[type="submit"]:hover,
-input[type="reset"]:hover,
-input[type="button"]:hover{
-    background-color: #2b2d42;
-}
-
-
-/* Table Button */
-
-td input[type="button"]{
-    width: auto;
-    margin: 2px;
-    padding: 6px 12px;
+.footer p {
+    margin: 5px;
 }
