@@ -1,38 +1,38 @@
 
-* {
+*{
     box-sizing: border-box;
 }
 
 /* Body */
-body {
+body{
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 16px;
     color: #222222;
-    background-color: #f2f7fa;
+    background-color: #f4f4f8;
     max-width: 720px;
     margin: 0 auto;
     padding: 30px 20px;
 }
 
 /* Paragraph */
-p {
+p{
     color: #c0392b;
     text-align: center;
 }
 
 /* Header */
-.header {
+.header{
     text-align: center;
     color: white;
     padding: 12px;
     margin: 10px;
-    background-color: #2a6f97;
+    background-color: #3d405b;
     border-radius: 8px;
 }
 
 /* Footer */
-.footer {
-    background-color: #014f86;
+.footer{
+    background-color: #2b2d42;
     color: white;
     text-align: center;
     padding: 15px;
@@ -42,19 +42,19 @@ p {
 }
 
 /* Fieldset */
-fieldset {
-    background-color: #e8f1f7;
-    border: 1px solid #b5cfe0;
+fieldset{
+    background-color: #eeeef4;
+    border: 1px solid #c5c6d6;
     border-radius: 8px;
     padding: 20px;
     margin-bottom: 20px;
 }
 
 /* Legend */
-legend {
-    background-color: #2a6f97;
+legend{
+    background-color: #3d405b;
     color: white;
-    border: 1px solid #014f86;
+    border: 1px solid #2b2d42;
     border-radius: 8px;
     padding: 6px 14px;
     font-family: 'Times New Roman', Times, serif;
@@ -62,13 +62,13 @@ legend {
 }
 
 /* Table */
-table {
+table{
     width: 100%;
     border-collapse: collapse;
 }
 
 /* Table Data */
-td {
+td{
     padding: 8px 6px;
     vertical-align: top;
 }
@@ -78,32 +78,31 @@ input[type="text"],
 input[type="password"],
 input[type="email"],
 select,
-textarea {
+textarea{
     width: 100%;
     padding: 8px 10px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 16px;
-    border: 1px solid #2a6f97;
+    border: 1px solid #3d405b;
     border-radius: 5px;
     background-color: white;
 }
 
 /* Textarea */
-textarea {
+textarea{
     height: 110px;
 }
 
-/* Radio and Checkbox */
+/* Radio Buttons and Checkboxes */
 input[type="radio"],
-input[type="checkbox"] {
+input[type="checkbox"]{
     margin: 10px 4px 0 10px;
-    accent-color: #2a6f97;
+    accent-color: #3d405b;
 }
 
-/* Buttons */
+/* Submit and Reset Buttons */
 input[type="submit"],
-input[type="reset"],
-input[type="button"] {
+input[type="reset"]{
     padding: 10px 20px;
     font-size: 16px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
@@ -111,17 +110,43 @@ input[type="button"] {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    margin-left: 8px;
     margin-bottom: 20px;
     width: 48%;
     color: white;
-    background-color: #2a6f97;
+    background-color: #3d405b;
 }
 
 /* Button Hover */
 input[type="submit"]:hover,
-input[type="reset"]:hover,
-input[type="button"]:hover {
-    background-color: #014f86;
+input[type="reset"]:hover{
+    background-color: #2b2d42;
 }
 
+/* Mobile Responsive */
+@media (max-width: 480px){
+
+    body{
+        padding: 15px 10px;
+    }
+
+    fieldset{
+        padding: 10px;
+    }
+
+    table,
+    tbody,
+    tr,
+    td{
+        display: block;
+        width: 100%;
+    }
+
+    td{
+        padding: 6px 3px;
+    }
+
+    input[type="submit"],
+    input[type="reset"]{
+        width: 100%;
+    }
+}

@@ -1,39 +1,71 @@
-
 <!DOCTYPE html>
 <html lang="en-US">
-    <head>
-        <meta charset="UTF-8">
-        <title>Admin Login</title>
-        <link rel="stylesheet" href="../Design/admin.css">
-        <script src="../JS/admin.js"></script>
-    </head>
-    <body>
-        <img src="../Images/foodloop-logo.png" id="logo" alt="FoodLoop Logo">
 
-        <div class="header">
-            <h1>FoodLoop</h1>
-        </div>
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Login - FoodLoop</title>
+    <link rel="stylesheet" href="../Design/admin.css">
+</head>
 
-        <form onsubmit="return login_data()">
-            <fieldset>
-                <legend>Admin Login</legend>
-                <table>
-                    <tr>
-                        <td><label for="UserName">User Name:</label></td>
-                        <td><input type="text" id="UserName" placeholder="Enter User Name"></td>
-                    </tr>
-                    <tr>
-                        <td><label for="Password">Password:</label></td>
-                        <td><input type="password" id="Password" placeholder="Enter Password"></td>
-                    </tr>
-                </table>
-                <p id="LoginError"></p>
-            </fieldset>
+<body>
 
-            <input type="submit" id="submit" value="Login">
-            <input type="reset" id="reset">
-        </form>
+    <div class="header">
+        <h1>FoodLoop</h1>
+        <h3>Admin Login</h3>
+    </div>
 
-        <div class="footer">FoodLoop</div>
-    </body>
+    <form onsubmit="return login_data()" novalidate>
+
+        <fieldset>
+            <legend>Admin Login Information</legend>
+
+            <table>
+
+                <tr>
+                    <td>Username:</td>
+                    <td>
+                        <input type="text" id="UserName"
+                        placeholder="Enter your username">
+
+                        <p id="LoginUsernameError" class="error"></p>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Password:</td>
+                    <td>
+                        <input type="password" id="Password"
+                        placeholder="Enter your password">
+
+                        <p id="LoginPasswordError" class="error"></p>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan="2" align="center">
+                        <input type="submit" value="Login">
+                        <input type="reset" value="Reset">
+                    </td>
+                </tr>
+
+            </table>
+
+            <p id="LoginMessage"></p>
+
+        </fieldset>
+
+    </form>
+
+    <p class="page-link">
+        Don't have an Admin account?
+        <a href="admin_register.html">Register Here</a>
+    </p>
+
+    <div class="footer">
+        <p>FoodLoop - A Food Sharing and Waste Reduction Platform</p>
+    </div>
+
+    <script src="../JS/admin.js"></script>
+
+</body>
 </html>
