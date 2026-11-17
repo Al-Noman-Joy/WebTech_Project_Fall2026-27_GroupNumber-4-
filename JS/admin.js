@@ -1,108 +1,149 @@
+
 console.log("Connected");
-let role = "admin";
 
-function get_users()
+// Admin Registration Function
+
+function register_admin()
 {
-    let data = localStorage.getItem("foodloop_users");
-    if(data === null)
+    let name = document.getElementById("AdminName").value.trim();
+    let email = document.getElementById("AdminEmail").value.trim();
+    let username = document.getElementById("NewUserName").value.trim();
+    let password = document.getElementById("NewPassword").value;
+    let confirm = document.getElementById("ConfirmPassword").value;
+
+    let valid = true;
+
+
+    document.getElementById("NameError").innerHTML = "";
+    document.getElementById("EmailError").innerHTML = "";
+    document.getElementById("UsernameError").innerHTML = "";
+    document.getElementById("PasswordError").innerHTML = "";
+    document.getElementById("ConfirmError").innerHTML = "";
+    document.getElementById("RegisterMessage").innerHTML = "";
+
+    // Name Validation
+
+    if(name === "")
     {
-        return [];
+        document.getElementById("NameError").innerHTML =
+        "Please enter your full name.";
+
+        valid = false;
     }
-    return JSON.parse(data);
-}
 
-function safe(text)
-{
-    return String(text).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
-}
+    // Email Validation
 
-function logout()
-{
-    localStorage.removeItem("foodloop_session");
-    window.location.href = "index.html";
+    if(email === "")
+    {
+        document.getElementById("EmailError").innerHTML =
+        "Please enter your email address.";
+
+        valid = false;
+    }
+    else if(!email.includes("@") || !email.includes("."))
+    {
+        document.getElementById("EmailError").innerHTML =
+        "Please enter a valid email address.";
+
+        valid = false;
+    }
+
+    // Username Validation
+
+    if(username === "")
+    {
+        document.getElementById("UsernameError").innerHTML =
+        "Please enter a username.";
+
+        valid = false;
+    }
+
+    // Password Validation
+
+    if(password === "")
+    {
+        document.getElementById("PasswordError").innerHTML =
+        "Please enter a password.";
+
+        valid = false;
+    }
+    else if(password.length < 6)
+    {
+        document.getElementById("PasswordError").innerHTML =
+        "Password must contain at least 6 characters.";
+
+        valid = false;
+    }
+
+    // Confirm Password Validation
+
+    if(confirm === "")
+    {
+        document.getElementById("ConfirmError").innerHTML =
+        "Please confirm your password.";
+
+        valid = false;
+    }
+    else if(password !== confirm)
+    {
+        document.getElementById("ConfirmError").innerHTML =
+        "Passwords do not match.";
+
+        valid = false;
+    }
+
+    // Stop Registration if Validation Fails
+
+    if(valid === false)
+    {
+        return false;
+    }
+
+    // Check Duplicate Registration
+
+    if(localStorage.getItem("foodloop_admin") !== null)
+    {
+        document.getElementById("RegisterMessage").style.color = "red";
+
+        document.getElementById("RegisterMessage").innerHTML =
+        "An Admin account is already registered.";
+
+        return false;
+    }
+
+    // Check Special Character
+
+    if(name.includes("|") || email.includes("|") ||
+       username.includes("|") || password.includes("|"))
+    {
+        document.getElementById("RegisterMessage").style.color = "red";
+
+        document.getElementById("RegisterMessage").innerHTML =
+        "The | character is not allowed.";
+
+        return false;
+    }
+
+    // Admin Information 
+
+    let admin_data = name + "|" + email + "|" + username + "|" + password;
+
+    localStorage.setItem("foodloop_admin", admin_data);
+
+    // Success Message
+
+    document.getElementById("RegisterMessage").style.color = "green";
+
+    document.getElementById("RegisterMessage").innerHTML =
+    "Admin Registration Successful! You can now login.";
+
+    // Clear Form
+
+    document.getElementById("AdminName").value = "";
+    document.getElementById("AdminEmail").value = "";
+    document.getElementById("NewUserName").value = "";
+    document.getElementById("NewPassword").value = "";
+    document.getElementById("ConfirmPassword").value = "";
+
     return false;
-}
-
-function check_session()
-{
-    let session = JSON.parse(localStorage.getItem("foodloop_session"));
-    if(session === null || session.role !== role)
-    {
-        window.location.href = "index.html";
-        return null;
-    }
-    return session;
-}
-
-// Login  
-function login_data()
-{
-    let user = document.getElementById("UserName").value.trim();
-    let pass = document.getElementById("Password").value;
-    let error = document.getElementById("LoginError");
-    if(user === "admin" && pass === "admin123")
-    {
-        localStorage.setItem("foodloop_session", JSON.stringify({role: role, username: user}));
-        window.location.href = "admin_dashboard.html";
-    }
-    else
-    {
-        error.innerHTML = "Wrong User Name Or Password";
-    }
-    return false;
-}
-
-// Dashboard
-function show_dashboard()
-{
-    let session = check_session();
-    if(session === null)
-    {
-        return;
-    }
-    document.getElementById("WelcomeText").innerHTML = "Welcome, Admin";
-    let users = get_users();
-    let pending = 0;
-    let approved = 0;
-    let rows = "<tr><th>Name</th><th>User Type</th><th>Email</th><th>Status</th><th>Action</th></tr>";
-    if(users.length === 0)
-    {
-        rows += '<tr><td colspan="5">No Registration Yet</td></tr>';
-    }
-    for(let i = 0; i < users.length; i++)
-    {
-        let action = "-";
-        if(users[i].status === "Pending")
-        {
-            pending++;
-            action = '<input type="button" value="Approve" onclick="approve_user(' + i + ')"> <input type="button" value="Reject" onclick="reject_user(' + i + ')">';
-        }
-        if(users[i].status === "Approved")
-        {
-            approved++;
-        }
-        rows += "<tr><td>" + safe(users[i].name) + "</td><td>" + users[i].role + "</td><td>" + safe(users[i].email) + "</td><td>" + users[i].status + "</td><td>" + action + "</td></tr>";
-    }
-    document.getElementById("UserTable").innerHTML = rows;
-    document.getElementById("TotalUsers").innerHTML = users.length;
-    document.getElementById("PendingUsers").innerHTML = pending;
-    document.getElementById("ApprovedUsers").innerHTML = approved;
-}
-
-function change_status(index, status)
-{
-    let users = get_users();
-    users[index].status = status;
-    localStorage.setItem("foodloop_users", JSON.stringify(users));
-    show_dashboard();
-}
-
-function approve_user(index)
-{
-    change_status(index, "Approved");
-}
-
-function reject_user(index)
-{
-    change_status(index, "Rejected");
 }

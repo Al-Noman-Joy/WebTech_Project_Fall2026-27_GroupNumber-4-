@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en-US">
     <head>
@@ -7,32 +6,39 @@
         <link rel="stylesheet" href="../Design/admin.css">
         <script src="../JS/admin.js"></script>
     </head>
+
     <body>
         <img src="../Images/foodloop-logo.png" id="logo" alt="FoodLoop Logo">
 
         <div class="header">
             <h1>FoodLoop</h1>
+            <h3>Admin Panel</h3>
         </div>
 
         <form onsubmit="return login_data()">
             <fieldset>
                 <legend>Admin Login</legend>
+
                 <table>
                     <tr>
                         <td><label for="UserName">User Name:</label></td>
-                        <td><input type="text" id="UserName" placeholder="Enter User Name"></td>
+                        <td><input type="text" id="UserName" placeholder="Enter User Name" required></td>
                     </tr>
+
                     <tr>
                         <td><label for="Password">Password:</label></td>
-                        <td><input type="password" id="Password" placeholder="Enter Password"></td>
+                        <td><input type="password" id="Password" placeholder="Enter Password" required></td>
                     </tr>
                 </table>
-                <p id="LoginError"></p>
+
+                <p id="LoginMessage"></p>
             </fieldset>
 
             <input type="submit" id="submit" value="Login">
-            <input type="reset" id="reset">
+            <input type="reset" id="reset" value="Reset">
         </form>
+
+        <p class="page-link">Don't have an admin account? <a href="admin_register.html">Register here</a></p>
 
         <div class="footer">FoodLoop</div>
     </body>
