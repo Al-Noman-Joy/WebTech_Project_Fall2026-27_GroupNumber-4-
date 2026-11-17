@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Registration - FoodLoop</title>
+    <link rel="stylesheet" href="../Design/admin.css">
+    <script src="../JS/admin.js"></script>
+</head>
+
+<body>
+    <img src="../Images/foodloop-logo.png" id="logo" alt="FoodLoop Logo">
+
+    <div class="header">
+        <h1>FoodLoop</h1>
+        <h3>Admin Registration</h3>
+    </div>
+
+    <form onsubmit="return register_admin()" novalidate>
+
+        <fieldset>
+            <legend>Admin Information</legend>
+
+            <table>
+                <tr>
+                    <td>Full Name:</td>
+                    <td>
+                        <input type="text" id="AdminName"
+                        placeholder="Enter your full name">
+
+                        <p id="NameError" class="error"></p>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Email Address:</td>
+                    <td>
+                        <input type="email" id="AdminEmail"
+                        placeholder="Enter your email">
+
+                        <p id="EmailError" class="error"></p>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Username:</td>
+                    <td>
+                        <input type="text" id="NewUserName"
+                        placeholder="Enter username">
+
+                        <p id="UsernameError" class="error"></p>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Password:</td>
+                    <td>
+                        <input type="password" id="NewPassword"
+                        placeholder="Enter password">
+
+                        <p id="PasswordError" class="error"></p>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Confirm Password:</td>
+                    <td>
+                        <input type="password" id="ConfirmPassword"
+                        placeholder="Confirm password">
+
+                        <p id="ConfirmError" class="error"></p>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan="2" align="center">
+                        <input type="submit" value="Register">
+                        <input type="reset" value="Reset">
+                    </td>
+                </tr>
+            </table>
+
+            <p id="RegisterMessage"></p>
+
+        </fieldset>
+
+    </form>
+
+    <p class="page-link">
+        Already have an account?
+        <a href="admin_login.html">Login Here</a>
+    </p>
+
+    <div class="footer">
+        <p>FoodLoop</p>
+    </div>
+
+</body>
+</html>
